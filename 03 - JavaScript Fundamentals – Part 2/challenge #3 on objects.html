@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+  // Coding challenge #3
+  // BMI is weight in kilograms divided by height in meters squared.
+  const Mark = {
+fullName :  'Mark Miller', 
+weight:78,
+height:1.69,
+calcBMI:function(){
+return this.bmi =  Math.floor((this.weight)/Math.pow(this.height,2));
+}
+  }
+
+  const John = {
+fullName: 'John Smith',
+weight:92,
+height:1.95,
+calcBMI: function(){
+return this.bmi =  Math.floor((this.weight)/Math.pow(this.height,2));
+}
+
+  }
+  // if(John.calcBMI() > Mark.calcBMI()){
+  //   console.log(`${John.fullName}'s BMI (${John.calcBMI()}) is higher than ${Mark.fullName} ${Mark.calcBMI()}`)
+  // }else{
+  //   console.log(`${John.fullName}'s BMI (${John.calcBMI()}) is lower than ${Mark.fullName} ${Mark.calcBMI()}`)
+  // }
+John.calcBMI();
+Mark.calcBMI();  
+console.log(`${John.bmi} ${Mark.bmi}`)
+
+if(Mark.bmi > John.bmi){
+console.log(`${Mark.fullName}'s BMI (${Mark.bmi}) is higher than ${John.fullName}'s BMI (${John.bmi}))`)
+}
+  
+  // John's BMI (28.3) is higjter tehan Mark's (23.9)
+  // test data : Marks weights 78 kg and is 1.69m tall.
+  // Johns weights 92 kg and is 1.95 m tall.
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
