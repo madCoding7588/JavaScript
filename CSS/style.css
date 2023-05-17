@@ -1,0 +1,35 @@
+.container {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+ 
+    border:1px solid black;
+   /* padding:25px; */
+    flex-direction:column;
+/* background:DodgerBlue; */
+background:lightblue;
+
+}
+
+
+
+
+.list-items{
+    list-style-type:none;
+    /* background:#f1f1f1; */
+    border:1px solid black;
+    /* padding:15px; */
+    padding-left: 150px;
+    padding-right:150px;
+    padding-top:15px;
+    padding-bottom: 5px;
+    background:white;
+ }
+ 
+
+ .main-container{
+    display:flex;
+    margin:25px;
+ }
+
+ 

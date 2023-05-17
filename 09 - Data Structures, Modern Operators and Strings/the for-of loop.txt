@@ -1,0 +1,95 @@
+the for-of loop
+
+Q. let's say we want to move over our entire array?
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+//we know how to use a regular for loop where we have to set a counter , a condition , then increment counter
+
+// that's why we got for-of loop which dont need all of this
+
+for(const variable of array)
+for(const item of menu) console.log(item);
+// here item variable points to each element in each iteration
+
+output: 
+Focaccia
+Bruschetta
+Garlic Bread
+Caprese Saad
+Pizza
+Pasta
+Risotto
+
+// we need not to do much work as in for loop and also we can use keywords like continue and break keywords.
+
+Q. what if we also wanted the current index and not just the current element?
+// in for-of loop it's bit pain when we need that index , becz for of loop was originally just ment to give the current element.
+// However you can get both, you will have to do this:
+
+// we call entries method on the menu array.
+for(const item of menu.entries()){
+console.log(item);
+}
+
+output:
+[0,"Focaccia"]
+[1,"Bruschetta"]
+[2,"Garlic Bread"]
+[3,"Caprese Saad"]
+[4,"Pizza"]
+[5,"Pasta"]
+[6,"Risotto"]
+
+console.log(menu.entries());
+output:
+Array Iterator{}
+
+console.log([...menu.entries()]);
+output:
+[Array(2), Array(2),Array(2), Array(2), Array(2), Array(2), Array(2)]
+
+// it is basically an array which in each position contains a new array, which contains element , element entity index number of that element in the original array
+
+
+we can log something nice 
+
+for(const item of menu.entries()){
+console.log(`${item[0] + 1}: ${item[1]}`);
+}
+
+// now we are smart enough we don't need to manually take item[0] and item[1] , we can destructur it.
+
+i -> index and el-> element.
+for(const [i,el] of menu.entries()){
+console.log(`${i+1}: ${el}`);
+
+}
+
+// so we could undersatad how destrucuring is usefull and same is applied for , for-of loop .
+
+
+completed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

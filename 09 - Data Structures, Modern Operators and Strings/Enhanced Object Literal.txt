@@ -1,0 +1,313 @@
+Enhanced Object Literals:
+
+let's take closure look at our restaurant object:
+
+const restaurant = {
+name:'Classico Italiano',
+location:'Via Angelo Tavanti 23 , fireze, Italy',
+categories:'Italian','Pizzeria','Vegetarian','Organic'],
+starterMenu :['Focaccia', 'Bruschetta','Garlic Bread','Caprese Salad'],
+mainMenu :['Pizza','Pasta','Risotto'],
+openingHours:{
+thu:{
+open:12,
+close:22,
+
+},
+fri:{
+open:11,
+close:23,
+},
+sat:{
+open:0,// open 24 hours
+close:24,
+
+},
+},
+
+}
+
+this restaurant object is an object literal, this is becz we wrote this object in curly braces. so all of the restaurant object has been written using the object literal syntax.
+
+ES6 has introduced 3 ways which makes it easier to write object literal like this.Let's go through them:
+
+1) let's say we have an object outside of restaurant object, let'stake openningHours and create separete object with it.
+
+const openingHours={
+thu:{
+open:12,
+close:22,
+
+},
+fri:{
+open:11,
+close:23,
+},
+sat:{
+open:0,// open 24 hours
+close:24,
+
+},
+};
+
+const restaurant = {
+name:'Classico Italiano',
+location:'Via Angelo Tavanti 23 , fireze, Italy',
+categories:'Italian','Pizzeria','Vegetarian','Organic'],
+starterMenu :['Focaccia', 'Bruschetta','Garlic Bread','Caprese Salad'],
+mainMenu :['Pizza','Pasta','Risotto'],
+
+}
+
+-> now still we want the openingHourse object inside of the restaurant object, so before ES6 we will have to write:
+we write:
+
+const openingHours={ // this opening hours can be referred as variable name or object name.
+thu:{
+open:12,
+close:22,
+
+},
+fri:{
+open:11,
+close:23,
+},
+sat:{
+open:0,// open 24 hours
+close:24,
+
+},
+};
+
+const restaurant = {
+name:'Classico Italiano',
+location:'Via Angelo Tavanti 23 , fireze, Italy',
+categories:'Italian','Pizzeria','Vegetarian','Organic'],
+starterMenu :['Focaccia', 'Bruschetta','Garlic Bread','Caprese Salad'],
+mainMenu :['Pizza','Pasta','Risotto'],
+openingHours:openingHours // first we write the property name and then : the variable name
+
+}
+
+with this, the restaurant object is restored ( this means we had earlier restaurent object with opening hours,that is now restored).
+console.log(restaurant)// here we have openingHours just as before.
+
+Q. why this is not good?
+openingHours:openingHours => this can become annoying becoz the property name is same as variable name from which we are getting this object. In inhanced object literal we don't need to do this
+
+
+
+const openingHours={ // this opening hours can be referred as variable name or object name.
+thu:{
+open:12,
+close:22,
+
+},
+fri:{
+open:11,
+close:23,
+},
+sat:{
+open:0,// open 24 hours
+close:24,
+
+},
+};
+
+const restaurant = {
+name:'Classico Italiano',
+location:'Via Angelo Tavanti 23 , fireze, Italy',
+categories:'Italian','Pizzeria','Vegetarian','Organic'],
+starterMenu :['Focaccia', 'Bruschetta','Garlic Bread','Caprese Salad'],
+mainMenu :['Pizza','Pasta','Risotto'],
+// ES6 enhanced object literals
+openingHours,// what this going to do now is to take this opening hours object and put it into the restaurant object and create a property name with exactly that variable name.
+
+}
+
+
+Q. Now if you change openingHours to hours then you will have to change it in restaruterant object also.
+
+
+const openingHours={
+thu:{
+open:12,
+close:22,
+
+},
+fri:{
+open:11,
+close:23,
+},
+sat:{
+open:0,// open 24 hours
+close:24,
+
+	},
+};
+
+const restaurant = {
+name:'Classico Italiano',
+location:'Via Angelo Tavanti 23 , fireze, Italy',
+categories:'Italian','Pizzeria','Vegetarian','Organic'],
+starterMenu :['Focaccia', 'Bruschetta','Garlic Bread','Caprese Salad'],
+mainMenu :['Pizza','Pasta','Risotto'],
+// ES6 enhanced object literals
+hours,
+
+}
+
+console.log(restaurant);
+
+
+//this was all about the 1st enhancement 
+
+//Now let's check about 2nd Object literal enhancement is about writing methods :
+in ES6 we no longer have to create a property and then set it to a function expression like we have always been doing?
+
+
+const restaurant = {
+name:'Classico Italiano',
+location:'Via Angelo Tavanti 23 , fireze, Italy',
+categories:'Italian','Pizzeria','Vegetarian','Organic'],
+starterMenu :['Focaccia', 'Bruschetta','Garlic Bread','Caprese Salad'],
+mainMenu :['Pizza','Pasta','Risotto'],
+openingHours:{
+thu:{
+open:12,
+close:22,
+
+},
+fri:{
+open:11,
+close:23,
+},
+sat:{
+open:0,// open 24 hours
+close:24,
+
+},
+},
+order: function(starterIndex, mainIndex){
+return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+
+}
+
+// in ES6 we no longer have to create a property and no longer set it to a function expression like we have always been doing , so essentially we create a property just like we do all the other properties and then set that to a function expression, we no longer need to do that. we can write it in an easier way.
+
+
+
+const restaurant = {
+name:'Classico Italiano',
+location:'Via Angelo Tavanti 23 , fireze, Italy',
+categories:'Italian','Pizzeria','Vegetarian','Organic'],
+starterMenu :['Focaccia', 'Bruschetta','Garlic Bread','Caprese Salad'],
+mainMenu :['Pizza','Pasta','Risotto'],
+openingHours:{
+thu:{
+open:12,
+close:22,
+
+},
+fri:{
+open:11,
+close:23,
+},
+sat:{
+open:0,// open 24 hours
+close:24,
+
+},
+},
+// we can get rid of the function keyword and colon, this one works exactly same as before.but with a slightly easier syntax.
+order(starterIndex, mainIndex){
+return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+
+}
+
+
+// 3. the third enhancement is now we can actually compute property names instead of having to write them out manually and literally. and compute just means calculate 
+let's say we had an array with all weekdays
+
+
+
+
+
+const openingHours={
+thu:{
+open:12,
+close:22,
+
+},
+fri:{
+open:11,
+close:23,
+},
+sat:{
+open:0,// open 24 hours
+close:24,
+
+	},
+};
+
+const restaurant = {
+name:'Classico Italiano',
+location:'Via Angelo Tavanti 23 , fireze, Italy',
+categories:'Italian','Pizzeria','Vegetarian','Organic'],
+starterMenu :['Focaccia', 'Bruschetta','Garlic Bread','Caprese Salad'],
+mainMenu :['Pizza','Pasta','Risotto'],
+// ES6 enhanced object literals
+hours,
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const weekdays = ['mon','tue','wed','thu','fri','sat','sun'];
+///here we want to take these(thu,fri,sat) property name out of this(weekdays) array instead of having to write the m manually  we can do that by using again the square bracket syntax. [] and in here we can put any expression basically let's say [weekdays[3]] and ofcourse we could use destructring here , [weekdays[4]] , we can do anything like [`day-${2+4}`] so we get 
+
+const openingHours={
+[weekdays[3]]:{
+open:12,
+close:22,
+
+},
+[weekdays[4]]:{
+open:11,
+close:23,
+},
+[`day-${2+4}`]:{
+open:0,// open 24 hours
+close:24,
+
+	},
+};
+
+const restaurant = {
+name:'Classico Italiano',
+location:'Via Angelo Tavanti 23 , fireze, Italy',
+categories:'Italian','Pizzeria','Vegetarian','Organic'],
+starterMenu :['Focaccia', 'Bruschetta','Garlic Bread','Caprese Salad'],
+mainMenu :['Pizza','Pasta','Risotto'],
+// ES6 enhanced object literals
+hours,
+
+}
+
+console.log(openingHours);
+output:
+
+// you will get day-6 fri and thu , and notice we computed property name day-6 usng templete literal [``] and exprssion ${2+4}
+
+what we learnt??
+before we were able to compute compute values like example
+thu :{
+open :0,
+close:12 + 12 
+}
+
+but now we are also able to change teh propery name :
+example thu was changed to [weekday[4]];
+
+completed.
+
+
